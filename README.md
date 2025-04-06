@@ -72,3 +72,119 @@ Añadimos las clases `HeaderWave` y `_HeaderWavePainter` a `headers.dart` que ll
 ### CustomPainter con gradiente
 
 Añadimos las clases `HeaderWaveGradient` y `_HeaderWaveGradientPainter` a `headers.dart` que llamamos desde `headers_page.dart`.
+
+## Animaciones personalizadas
+
+### Preparando la pantalla para animar
+
+En la carpeta `pages` creamos un nuevo archivo `animaciones_page.dart` y creamos las clases `AnimacionesPage`, `CuadradoAnimado`, `_CuadradoAnimadoState` y `_Rectangulo`.
+
+En `main.dart` llamamos a `AnimacionesPage()`.
+
+### Animation y AnimationController
+
+Nos centramos en animaciones personalizadas. Para poder crearlas, necesitamos:
+
+- AnimationController
+  - Es un control que nos sirve para manejar la animación
+  - Por defecto su situación es de parada
+  - Si indicamos `controller.forward()` la animación empieza a ejecutarse
+  - Pensar en el AnimationController como en la barra de un video de YouTube, donde podemos parar, pausar, adelantar, ejecutar hacia atrás, ejecutar normal... un video
+  - En el método `initState()` del ciclo de vida de un Stateful Widget inicializamos el controller
+  - Es importante utilizar el método `dispose()` del ciclo de vida de un Stateful Widget para deshacernos del controller
+- Animation
+  - Es el tipo de cosa que queremos animar, por ejemplo, rotar un cuadro...
+  - Tenemos que indicar quien controla esta animación, es decir, le pasamos el controller
+
+Vamos a modificar la clase `_CuadradoAnimadoState` de `animaciones_page.dart`.
+
+### AnimatedBuilder y la rotación
+
+Ya tenemos el controlador y como queremos que varíe la rotación.
+
+Modificamos el método `build()` de la clase `_CuadradoAnimadoState` para que devuelva un `AnimatedBuilder`.
+
+### Animation Listener y Animation Status
+
+Los listeners se añaden en el método initState() de un Stateful Widget.
+
+Modificamos el método `initState()` de la clase `_CuadradoAnimadoState`.
+
+### Curves
+
+https://easings.net/en
+
+Tal y como tenemos la animación hasta este momento, se le conoce como alinación lineal, es decir, no hay acelaración al inicio o al final, es constante durante el tiempo que dura la misma.
+
+Los curves nos permiten alterar la aceleración de una animación en distintos momentos de la vida de esta.
+
+Modificamos el método `initState()` de la clase `_CuadradoAnimadoState`.
+
+### Múltiples animaciones simultáneas
+
+Imaginemos que, además de la animación actual, queremos otra animación animando otra propiedad.
+
+Vamos a hacer que nuestro objeto tenga una opacidad muy baja al inicio y que, conforme pasa el tiempo, se vaya haciendo más opaco, es decir, un faded in.
+
+Aunque existen formas en Flutter de hacerlo, lo vamos a controlar nosotros manualmente.
+
+Notar que solo necesitamos un controller.
+
+Modificamos `_CuadradoAnimadoState` añadiendo la variable `opacidad`. La configuración de la opacidad la indicamos en el método `initState()` y modificamos también el método `build()` para indicar un Widget `Opacity()` dentro del `AnimatedBuilder`.
+
+### Animar en intervalos de tiempo
+
+Podemos alterar la aceleración de la animación de la opacidad usando curves.
+
+También vamos a controlar en que punto del tiempo queremos que empiece a ejecutarse esta animación, la de la opacidad, mientras se sigue ejecutando la animación de la rotación.
+
+Usaremos siempre el mismo controller.
+
+Modificamos el método `initState()` de `_CuadradoAnimadoState`.
+
+### Mover el cuadrado
+
+Vamos a crear una nueva propiedad (una nueva animación) llamada `moverDerecha` en la clase `_CuadradoAnimadoState` para mover el cuadrado a la derecha.
+
+También aplicamos curves.
+
+Modificamos el método `initState()` para iniciar nuestra nueva propiedad.
+
+Para hacer que realmente se mueva modificamos el método `build()`.
+
+### Escalar el cuadrado
+
+Vamos a crear una nueva propiedad (una nueva animación) llamada `agrandar` en la clase `_CuadradoAnimadoState` para agrandar el cuadrado.
+
+Modificamos el método `initState()` para iniciar nuestra nueva propiedad.
+
+Para hacer que realmente se mueva modificamos el método `build()`.
+
+### Determinar el estado de una animación
+
+Los distintos estados de una animación son:
+
+- isCompleted
+- isDismissed
+- isAnimating
+- isForwardOrComplete
+
+Por ejemplo, podemos hacer `opacidad.status` para saber su status, o `controller.status`, o preguntar por un estado en concreto, por ejemplo `agrandar.isCompleted`.
+
+No olvidar la propiedad `value`, por ejemplo `opacidad.value` para saber el valor actual.
+
+### FadeOut de la opacidad
+
+Hago una tarea para hacer que la opacidad desaparezca en el último segundo de la animación (recordar que el total de la animación son 4sg)
+
+Creamos una nueva propiedad (animación) llamada `opacidadOut`.
+
+Modificamos el método `initState()` para iniciar nuestra nueva propiedad.
+
+Para hacer que realmente se haga la opacidad, modificamos el método `build()`.
+
+### Inicio de un nuevo reto
+
+En la carpeta `src` creamos la carpeta `retos` y dentro creamos el archivo `cuadrado_animado_page.dart`.
+
+En `main.dart` llamamos a `CuadradoAnimadoPage()`.
