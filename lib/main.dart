@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 // import 'package:design_app/src/pages/headers_page.dart';
 // import 'package:design_app/src/pages/animaciones_page.dart';
-import 'package:design_app/src/retos/cuadrado_animado_page.dart';
+// import 'package:design_app/src/retos/cuadrado_animado_page.dart';
+import 'package:design_app/src/pages/graficas_circulares_page.dart';
 
 void main() {
   runApp(const MainApp());
@@ -18,7 +19,8 @@ class MainApp extends StatelessWidget {
       title: 'Diseños App',
       // home: HeadersPage()
       // home: AnimacionesPage()
-      home: CuadradoAnimadoPage()
+      // home: CuadradoAnimadoPage()
+      home: GraficasCircularesPage()
     );
   }
 }

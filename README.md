@@ -188,3 +188,83 @@ Para hacer que realmente se haga la opacidad, modificamos el método `build()`.
 En la carpeta `src` creamos la carpeta `retos` y dentro creamos el archivo `cuadrado_animado_page.dart`.
 
 En `main.dart` llamamos a `CuadradoAnimadoPage()`.
+
+## ProgressBar circular - Animated Custom Painter
+
+### Temas puntuales de la sección
+
+En esta sección tocaremos los siguientes temas:
+
+- Repaso del custom painter
+- Dibujo de arcos
+- Dibujo de círculos
+- Animar custom painters
+- Crear un widget de progreso circular
+- Decoración de las puntas del custom painter
+- Dibujar sobre otros painters
+- Transformación en un widget re-utilizable
+- Y más
+
+Durante la sección hay tareas y ejercicios que les pido que intenten hacer, eso nos ayuda a reforzar lo aprendido.
+
+### Preparación del espacio para trabajar
+
+En la carpeta `pages` creamos el archivo `circular_progress_page.dart`.
+
+En este archivo, que luego vamos a llevar a una carpeta de referencias, vamos a hacer "como podamos" un Circular Progress Indicator.
+
+Luego lo haremos de forma correcta, y ese archivo será el que podremos reutilizar.
+
+Actualizamos `main.dart` para que utilice nuestro nuevo archivo.
+
+### CustomPainter - Círculos y Arcos
+
+Seguimos modificando `circular_progress_page.dart`.
+
+### Cambiando el valor dinámicamente
+
+Seguimos modificando `circular_progress_page.dart`.
+
+### Animando el arco
+
+Seguimos modificando `circular_progress_page.dart`.
+
+### Crear una página para usar el CircularProgress
+
+Aquí es donde optimizamos todo para poder reutilizarlo, porque tal y como está ahora, es muy difícil de usarlo en distintos sitios.
+
+En la carpeta `src` creamos la carpeta `labs`, donde acabarán nuestros experimentos.
+
+Movemos `circular_progress_page.dart` a esa carpeta, porque no lo vamos a utilizar más. En `main.dart` eliminamos toda referencia a esa página.
+
+En la carpeta `pages` creamos un fichero llamado `graficas_circulares_page.dart`. El objetivo es volver a hacer el Circular Progress Indicator, pero siendo muy fácil de reutilizar.
+
+Actualizamos `main.dart` para que utilice nuestro nuevo archivo.
+
+### Creando nuestro widget personalizado
+
+Vamos a crear un widget reutilizable.
+
+En la carpeta `widgets` creamos el archivo `radial_progress.dart`.
+
+### Dibujar el círculo y el arco inicial
+
+Seguimos modificando `radial_progress.dart`.
+
+### Animando mi RadialProgress Widget
+
+Seguimos modificando `radial_progress.dart`.
+
+### Añadiendo personalización a nuestro RadialProgress
+
+Seguimos modificando `graficas_circulares_page.dart` y `radial_progress.dart`.
+
+### Jugando con nuestro RadialProgress
+
+Ponemos 4 RadialProgress en pantalla.
+
+Seguimos modificando `graficas_circulares_page.dart`.
+
+### CircularProgress con gradiente
+
+Modificamos `radial_progress.dart`.
