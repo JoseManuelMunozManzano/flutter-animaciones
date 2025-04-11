@@ -268,3 +268,133 @@ Seguimos modificando `graficas_circulares_page.dart`.
 ### CircularProgress con gradiente
 
 Modificamos `radial_progress.dart`.
+
+## Slideshow
+
+### Temas puntuales de la sección
+
+En esta sección tocaremos los siguientes temas:
+
+- Pageviews
+- AnimatedContainer
+- Controller
+- Listeners
+- Provider
+- Reutilizar el widget
+- Multiples instancias de provider para multiples slideshows
+- ChangeNotifierProvider
+- Personalización
+- Y más
+
+Adicionalmente, al terminar la sección, notarán que si colocamos el dispositivo en modo landscape u horizontal, no se verá muy bien, pero esto lo terminaremos arreglando un poco más adelante.
+
+### Inicio del espacio para trabajar
+
+En la carpeta `pages` creamos el archivo `slideshow_page.dart`.
+
+Actualizamos `main` para llamar a nuestra nueva page.
+
+Vamos a trabajar con SVGs de la página `https://undraw.co/`, que son gratuitas.
+
+En la raiz del proyecto creamos la carpeta `assets/svgs` y guardamos ahí las imágenes SVG descargadas.
+
+### Mostrando SVGs en pantalla
+
+Vamos a mostrar los archivos SVG en pantalla.
+
+Para hacer esto instalamos el paquete `flutter_svg`. Ver su documentación aquí: `https://pub.dev/packages/flutter_svg#-installing-tab-`.
+
+También tenemos que habilitar nuestros assets. Para ello, en el fichero `pubspec.yaml` indico:
+
+```yaml
+flutter:
+  assets:
+    - assets/svgs/
+```
+
+Modificamos `slideshow_page.dart`.
+
+### PageView - Creando un Slideshow
+
+Vamos a enfocarnos en la lógica de nuestra aplicación.
+
+Modificamos `slideshow_page.dart` creando las clases privadas `_Slides` y `_Slide` que acabaremos optimizando.
+
+### Diseño de los puntos indicadores
+
+Vamos a crear los puntos indicadores para saber en que página me encuentro.
+
+Modificamos `slideshow_page.dart` y creamos las clases privadas `_Dots` y `_Dot`.
+
+### PageViewController - Escuchar cambios de páginas
+
+Controlamos el estado de la aplicación para saber en que slide estamos y así colorear el punto indicador respectivo.
+
+Modificamos `slideshow_page.dart`.
+
+### Provider - Compartir la página actual
+
+Si estoy en el slide 1, ¿cómo hago para colorear el punto indicador 1? Necesitaremos comunicarnos entre Widgets y para eso usaremos Provider.
+
+Provider nos permite manejar una instancia global de alguna clase.
+
+Instalamos `provider`. Ver la documentación: `https://pub.dev/packages/provider`.
+
+En la carpeta `src` creamos la carpeta `models` y dentro el archivo `slider_model.dart`.
+
+Modificamos `slideshow_page.dart`.
+
+### ChangeNotifierProvider - Instanciar nuestra clase
+
+Empezamos a configurar y usar nuestro provider en `slideshow_page.dart`.
+
+### Cambio de color con animación
+
+Modificamos `slideshow_page.dart` para que el cambio de punto indicador se haga con una animación.
+
+Vamos a usar `AnimatedContainer`.
+
+### Widget Slideshow - Inicio de optimizaciones
+
+Refactorizamos `slideshow_page.dart`.
+
+Movemos `slideshow_page.dart` a la carpeta `labs` y creamos en la carpeta `pages` un nuevo archivo `slideshow_page.dart` ya optimizado.
+
+En la carpeta `widgets` creamos el archivo `slideshow.dart`. Será un widget reutilizable.
+
+### Enviando Widgets a nuestro Slideshow
+
+Modificamos `slideshow.dart` para recibir las imágenes de manera dinámica.
+
+Modificamos `slideshow_page.dart`.
+
+### Mostrando puntos dependiendo de la cantidad de slides
+
+Modificamos `slideshow.dart` para que tenga en cuenta el número de slides al mostrar los puntos indicadores.
+
+### Añadiendo personalización a nuestro Slideshow
+
+Vamos a crear propiedades que recibirá nuestro Slideshow.
+
+- Posibilidad de poner los puntos indicadores arriba o abajo
+- Cambio de colores de los puntos indicadores
+
+Modificamos `slideshow_page.dart` y `slideshow.dart`.
+
+### Configuraciones usando provider
+
+En vez de ir pasando propiedades de padres a hijos, vamos a usar el provider para gestionar los valores de estas propiedades.
+
+Para no perder lo que ya tengo, me llevo una copia de `slideshow.dart` a la carpeta `labs`.
+
+Modificamos `slideshow_page.dart` y `slideshow.dart`.
+
+### bulletPrimario, bulletSecundario
+
+Vamos a seguir implementando propiedades y trabajando con provider.
+
+Modificamos `slideshow_page.dart` y `slideshow.dart`.
+
+### Colocando dos slideshows
+
+Modificamos `slideshow_page.dart`.
