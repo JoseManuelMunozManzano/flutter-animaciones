@@ -398,3 +398,88 @@ Modificamos `slideshow_page.dart` y `slideshow.dart`.
 ### Colocando dos slideshows
 
 Modificamos `slideshow_page.dart`.
+
+## Pinterest Layout y menú
+
+### Temas puntuales de la sección
+
+En esta sección tocaremos los siguientes temas:
+
+- Pinterest Layout
+- Diseño de columnas
+- Menú flotante
+- Controladores del scroll
+- Listeners
+- Ocultar y mostrar el menú con scroll
+- Personalización
+- Re-utilización del widget
+- Posicionamiento
+- Enviar funciones como argumento
+- Y más
+
+### Nota de actualización
+
+Hay que instalar el paquete `flutter_staggered_grid_view`.
+
+Recomendamos instalar la versión ^0.4.1 o inferior.
+
+`flutter_staggered_grid_view: ^0.4.1`
+
+Si usamos una versión superior, esta trae cambios y tendremos que revisar la documentación para realizar la implementación, diferente a la del curso.
+
+Documentación: `https://pub.dev/packages/flutter_staggered_grid_view#-readme-tab-`
+
+### Inicio de proyecto - Pinterest
+
+En la carpeta `pages` nos creamos el archivo `pinterest_page.dart`.
+
+Actualizamos `main.dart` para que apunte a la nueva página.
+
+Instalamos la dependencia `flutter_staggered_grid_view: ^0.4.1`.
+
+### Pinterest Menú 
+
+Para crear el menú, en la carpeta `widgets` creamos el archivo `pinterest_menu.dart`.
+
+Vamos a recibir un icono y el callback que queremos ejecutar cuando se presiona.
+
+Modificamos `pinterest_page.dart` para incluir el menú.
+
+### Diseño de nuestro menú
+
+Modificamos `pinterest_menu.dart`.
+
+### Diseño del botón del menú
+
+Modificamos `pinterest_menu.dart`.
+
+### Activar opción del menú
+
+Modificamos `pinterest_menu.dart`.
+
+Vamos a usar Provider para pasar información entre widgets.
+
+### Colocar nuestro menú sobre el grid
+
+Modificamos `pinterest_menu.dart` y `pinterest_page.dart`.
+
+### Mostrar y ocultar el menú con el Scroll
+
+Modificamos `pinterest_page.dart` para saber cuando estamos haciendo scroll arriba o abajo.
+
+### Cambiar la opacidad del menú
+
+Modificamos `pinterest_menu.dart` creando una propiedad para que se muestre el menú o desaparezca, usando la opacidad.
+
+Modificamos `pinterest_page.dart` para comunicarme con el widget `pinterest_menu.dart`. Uso Provider.
+
+### Personalización a nuestro menú
+
+Corregimos `pinterest_page.dart` para hacer que, si subimos el grid muy rápido, cuando haga el rebote no aparezca y desaparezca el menú.
+
+Modificamos `pinterest_menu.dart` para recibir un par de argumentos adicionales. Las implementaremos en el provider.
+
+### Argumento de menu items
+
+Modificamos `pinterest_menu.dart` para que los items de los menús puedan pasarse como argumentos desde `pinterest_page.dart`.
+
