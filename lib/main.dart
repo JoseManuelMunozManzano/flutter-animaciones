@@ -1,4 +1,3 @@
-import 'package:design_app/src/pages/pinterest_page.dart';
 import 'package:flutter/material.dart';
 
 // import 'package:design_app/src/pages/headers_page.dart';
@@ -6,6 +5,8 @@ import 'package:flutter/material.dart';
 // import 'package:design_app/src/retos/cuadrado_animado_page.dart';
 // import 'package:design_app/src/pages/graficas_circulares_page.dart';
 // import 'package:design_app/src/pages/slideshow_page.dart';
+// import 'package:design_app/src/pages/pinterest_page.dart';
+import 'package:design_app/src/pages/emergency_page.dart';
 
 void main() {
   runApp(const MainApp());
@@ -24,7 +25,8 @@ class MainApp extends StatelessWidget {
       // home: CuadradoAnimadoPage()
       // home: GraficasCircularesPage()
       // home: SlideshowPage()
-      home: PinterestPage()
+      // home: PinterestPage()
+      home: EmergencyPage()
     );
   }
 }

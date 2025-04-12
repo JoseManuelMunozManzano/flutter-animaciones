@@ -483,3 +483,98 @@ Modificamos `pinterest_menu.dart` para recibir un par de argumentos adicionales.
 
 Modificamos `pinterest_menu.dart` para que los items de los menús puedan pasarse como argumentos desde `pinterest_page.dart`.
 
+## Emergency Layout
+
+### Temas puntuales de la sección
+
+En esta sección tocaremos los siguientes temas:
+
+- Custom Headers
+- Botones
+- Funciones como argumentos
+- Re-utilización de widgets
+- Gradientes
+- Clips
+- Android Physics
+- Animaciones básicas para listviews
+- Stacks
+- Emular en múltiples dispositivos simultáneamente
+- Y más
+
+### Inicio de proyecto - Emergency
+
+Vamos a hacer este diseño:
+
+![alt Idea](./images/01-emergency-idea.png)
+
+En la carpeta `pages` nos creamos el archivo `emergency_page.dart`.
+
+Actualizamos `main.dart` para que apunte a la nueva página.
+
+### IconHeader
+
+Vamos a hacer la parte del Header de la pantalla como un widget reutilizable.
+
+En la carpeta `widgets` creamos el archivo `icon_header.dart`.
+
+Modificamos `emergency_page.dart` para llamar a nuestro nuevo widget.
+
+### Iconos y textos de mi IconHeader
+
+Instalamos la dependencia `font_awesome_flutter`. Documentación: `https://pub.dev/packages/font_awesome_flutter#-readme-tab-`.
+
+Modificamos `icon_header.dart`.
+
+### Parametrizando nuestro IconHeader
+
+Vamos a recibir argumentos para poder reutilizar nuestro IconHeader.
+
+Modificamos `icon_header.dart` y `emergency_page.dart`.
+
+### Creando los botones
+
+Vamos a hacer las opciones de menú que hay debajo de IconHeader.
+
+Vamos a crear uno y a reutilizarlo para los demás.
+
+En la carpeta `widgets` creamos el archivo `boton_gordo.dart`.
+
+Modificamos `emergency_page.dart` para llamar a nuestro nuevo widget.
+
+### Información dentro del botón
+
+Modificamos `boton_gordo.dart` y `emergency_page.dart`.
+
+### Parametrizando nuestro botón
+
+Vamos a recibir argumentos para poder reutilizar nuestro BotonGordo.
+
+Modificamos `boton_gordo.dart` y `emergency_page.dart`.
+
+### BotonGordo y nuestro IconHeader
+
+Ponemos junto nuestro IconHeader y una lista de BotonGordo.
+
+Modificamos `emergency_page.dart`.
+
+### Android physics y botón menú
+
+En un terminal Android, cuando llegamos al final de los items y hacemos el pull, en vez de tener el comportamiento de Ios (un rebote), aparece como una imagen indicando que se ha llegado al final de la lista.
+
+Lo cambiamos para que sea un comportamiento como el de Ios.
+
+También mostramos un botón de menú en nuestro IconHeader.
+
+Modificamos `emergency_page.dart`.
+
+### Animate_do y emular en dos dispositivos al mismo tiempo
+
+Instalamos el paquete `animate_do`. Documentación: `https://pub.dev/packages/animate_do#-readme-tab-`.
+
+Modificamos `emergency_page.dart` para meter animaciones.
+
+Podemos emular en dos dispositivos Androids, o en Android e Ios, por ejemplo.
+
+Para esto, ejecutar en la terminal el comando: `flutter run -d all`.
+
+Esto tarda un poco.
