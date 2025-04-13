@@ -6,7 +6,8 @@ import 'package:flutter/material.dart';
 // import 'package:design_app/src/pages/graficas_circulares_page.dart';
 // import 'package:design_app/src/pages/slideshow_page.dart';
 // import 'package:design_app/src/pages/pinterest_page.dart';
-import 'package:design_app/src/pages/emergency_page.dart';
+// import 'package:design_app/src/pages/emergency_page.dart';
+import 'package:design_app/src/pages/sliver_list_page.dart';
 
 void main() {
   runApp(const MainApp());
@@ -26,7 +27,8 @@ class MainApp extends StatelessWidget {
       // home: GraficasCircularesPage()
       // home: SlideshowPage()
       // home: PinterestPage()
-      home: EmergencyPage()
+      // home: EmergencyPage()
+      home: SliverListPage()
     );
   }
 }

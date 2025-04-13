@@ -578,3 +578,59 @@ Podemos emular en dos dispositivos Androids, o en Android e Ios, por ejemplo.
 Para esto, ejecutar en la terminal el comando: `flutter run -d all`.
 
 Esto tarda un poco.
+
+## Sliver List App
+
+### Temas puntuales de la sección
+
+En esta sección tocaremos los siguientes temas:
+
+- Slivers
+- Sliver AppBar
+- SliverList
+- CustomSliver
+- SliverPersistentHeaderDelegate
+- Botones con bordes redondeados en posiciones específicas
+- Y más
+
+### Inicio de la aplicación - SliverListApp
+
+Vamos a hacer este diseño:
+
+![alt Idea](./images/02-slivers-idea.png)
+
+La diferencia con el Emergency Layout es que en este diseño el header se mueve hacia arriba y se oculta, para dar más espacio a los items de la lista.
+
+Si volvemos a bajar los items, el header vuelve a mostrarse.
+
+En la carpeta `pages` nos creamos el archivo `sliver_list_page.dart`.
+
+Actualizamos `main.dart` para que apunte a la nueva página.
+
+### Diseño básico de la aplicación
+
+Modificamos `sliver_list_page.dart`.
+
+### Lista de items en base a un arreglo
+
+Vamos a trabajar con los colores y los textos.
+
+Modificamos `sliver_list_page.dart`.
+
+### CustomScrollView y Slivers
+
+Vemos los Widgets CustomScrollView, SliverAppBar y SliverList.
+
+Modificamos `sliver_list_page.dart`.
+
+### SliverPersistentHeaderDelegate
+
+Trabajamos con un sliver personalizado.
+
+Modificamos `sliver_list_page.dart`.
+
+### Botón personalizado flotante
+
+Es un botón fijo que está al fondo a la derecha.
+
+Modificamos `sliver_list_page.dart`.
