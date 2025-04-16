@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'package:provider/provider.dart';
+import 'package:design_app/src/theme/theme.dart';
+
 import 'package:design_app/src/widgets/headers.dart';
 
 class HeadersPage extends StatelessWidget {
@@ -7,6 +10,9 @@ class HeadersPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final primaryColor = Provider.of<ThemeChanger>(context).currentTheme.colorScheme.primary;
+
     return Scaffold(
       // body: HeaderCuadrado(),
       // body: HeaderBordesRedondeados(),
@@ -14,8 +20,8 @@ class HeadersPage extends StatelessWidget {
       // body: HeaderTriangular(),
       // body: HeaderPico(),
       // body: HeaderCurvo(),
-      // body: HeaderWave(),
-      body: HeaderWaveGradient(),
+      body: HeaderWave(color: primaryColor),
+      // body: HeaderWaveGradient(),
     );
   }
 }

@@ -634,3 +634,76 @@ Modificamos `sliver_list_page.dart`.
 Es un botón fijo que está al fondo a la derecha.
 
 Modificamos `sliver_list_page.dart`.
+
+## Temas para nuestra aplicación
+
+### Temas puntuales de la sección
+
+En esta sección tocaremos los siguientes temas:
+
+- Tema Light
+- Tema Dark
+- Tema personalizado
+- ThemeChanger
+- Provider
+- MultiProvider
+- Switches
+- Uso de propiedades del tema
+- Uso de colores del tema
+- Y más
+
+### Temas
+
+En la carpeta `pages` creamos el archivo `launcher_page.dart`.
+
+Actualizamos `main.dart` para que apunte a la nueva página.
+
+### Rutas de nuestra aplicación
+
+En la carpeta `src` creamos la carpeta `routes` y dentro el archivo `routes.dart`.
+
+Vamos a definir todas las rutas que va a tener nuestra aplicación.
+
+Modificamos `launcher_page.dart` para trabajar las opciones del menú usando `routes.dart`.
+
+### Provider - ThemeChanger
+
+Para poder modificar los switches del Drawer de mi app, vamos a utilizar Provider.
+
+En la carpeta `src` creamos la carpeta `theme` y dentro creamos el archivo `theme.dart`.
+
+Modificamos `main.dart` para añadir el tema creado y que sea accesible en toda la app.
+
+Modificamos `launcher_page.dart` para poder modificar los switches.
+
+### Dark y Light Themes
+
+Cambiamos el tema de la app.
+
+Modificamos `main.dart` para añadir la propiedad `theme`.
+
+Tenemos que saber el tema preestablecido y dicho valor preestablecido lo indicamos en `theme.dart`.
+
+### Usando colores del tema seleccionado
+
+Vamos a personalizar nuestra aplicación con diferentes colores en función del tema seleccionado.
+
+Modificamos `launcher_page.dart`.
+
+Modificamos `slideshow_page.dart`.
+
+### Aplicando temas en otras pantallas
+
+Seguimos personalizando nuestra aplicación.
+
+Modificamos `pinterest_page.dart`, `graficas_circulares_page.dart`, `headers_page.dart`.
+
+### Tema en la página de los Slivers
+
+Seguimos personalizando nuestra aplicación.
+
+Modficamos `sliver_list_page.dart`.
+
+### Creando un diseño personalizado
+
+Si cambiamos `currentTheme` en `theme.dart` cambio el tema global en mi app.

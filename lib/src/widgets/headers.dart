@@ -203,41 +203,51 @@ class _HeaderCurvoPainter extends CustomPainter {
 }
 
 class HeaderWave extends StatelessWidget {
-  const HeaderWave({super.key});
+  final Color color;
+
+  const HeaderWave({
+    super.key,
+    this.color = const Color(0xff615AAB),
+  });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: double.infinity,
       width: double.infinity,
-      child: CustomPaint(painter: _HeaderWavePainter()),
+      child: CustomPaint(painter: _HeaderWavePainter(color)),
     );
   }
 }
 
 class _HeaderWavePainter extends CustomPainter {
+
+  final Color color;
+
+  _HeaderWavePainter(this.color);
+
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint();
 
     // Propiedades
-    paint.color = Color(0xff615AAB);
+    paint.color = color;
     paint.style = PaintingStyle.fill;
     paint.strokeWidth = 2;
 
     final path = Path();
 
     // Dibujar con el path y paint
-    // path.lineTo(0, size.height * .25);
-    // path.quadraticBezierTo(size.width * .25, size.height * .3, size.width * .5, size.height * .25);
-    // path.quadraticBezierTo(size.width * .75, size.height * .2, size.width, size.height * .25);
-    // path.lineTo(size.width, 0);
+    path.lineTo(0, size.height * .25);
+    path.quadraticBezierTo(size.width * .25, size.height * .3, size.width * .5, size.height * .25);
+    path.quadraticBezierTo(size.width * .75, size.height * .2, size.width, size.height * .25);
+    path.lineTo(size.width, 0);
 
-    path.moveTo(0, size.height);
-    path.lineTo(0, size.height * .75);
-    path.quadraticBezierTo(size.width * .25, size.height * .7, size.width * .5, size.height * .75);
-    path.quadraticBezierTo(size.width * .75, size.height * .8, size.width, size.height * .75);
-    path.lineTo(size.width, size.height);
+    // path.moveTo(0, size.height);
+    // path.lineTo(0, size.height * .75);
+    // path.quadraticBezierTo(size.width * .25, size.height * .7, size.width * .5, size.height * .75);
+    // path.quadraticBezierTo(size.width * .75, size.height * .8, size.width, size.height * .75);
+    // path.lineTo(size.width, size.height);
 
     canvas.drawPath(path, paint);
   }

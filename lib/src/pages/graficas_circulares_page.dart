@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'package:provider/provider.dart';
+import 'package:design_app/src/theme/theme.dart';
+
 import 'package:design_app/src/widgets/radial_progress.dart';
 
 class GraficasCircularesPage extends StatefulWidget {
@@ -35,14 +38,14 @@ class _GraficasCircularesPageState extends State<GraficasCircularesPage> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               CustomRadialProgress(porcentaje: porcentaje, color: Colors.blue),
-              CustomRadialProgress(porcentaje: porcentaje, color: Colors.red),
+              CustomRadialProgress(porcentaje: porcentaje * 1.2, color: Colors.red),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              CustomRadialProgress(porcentaje: porcentaje, color: Colors.pink),
-              CustomRadialProgressGradient(porcentaje: porcentaje),
+              CustomRadialProgress(porcentaje: porcentaje * 1.4, color: Colors.pink),
+              CustomRadialProgressGradient(porcentaje: porcentaje * 1.6),
             ],
           )
         ],
@@ -65,13 +68,16 @@ class CustomRadialProgress extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final appTheme = Provider.of<ThemeChanger>(context).currentTheme;
+
     return SizedBox(
       width: 180,
       height: 180,
       child: RadialProgress(
         porcentaje: porcentaje,
         colorPrimario: color,
-        colorSecundario: Colors.grey,
+        colorSecundario: appTheme.textTheme.bodyLarge?.color ?? Colors.grey,
         grosorPrimario: 10.0,
         grosorSecundario: 4.0,
       ),
@@ -104,12 +110,14 @@ class CustomRadialProgressGradient extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appTheme = Provider.of<ThemeChanger>(context).currentTheme;
+
     return SizedBox(
       width: 180,
       height: 180,
       child: RadialProgress(
         porcentaje: porcentaje,
-        colorSecundario: Colors.grey,
+        colorSecundario: appTheme.textTheme.bodyLarge?.color ?? Colors.grey,
         grosorPrimario: 10.0,
         grosorSecundario: 4.0,
         gradiente: gradiente.createShader(rect),
