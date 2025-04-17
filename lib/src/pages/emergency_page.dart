@@ -22,6 +22,16 @@ class EmergencyPage extends StatelessWidget {
    @override
     Widget build(BuildContext context) {
 
+      // Para controlar como se ve en función del tamaño en pixeles del dispositivo.
+      // Si es mayor de 500px puedo mostrar el encabezado.
+      // print('H: ${MediaQuery.of(context).size.height}');
+      bool isLarge;
+      if (MediaQuery.of(context).size.height > 500) {
+        isLarge = true;
+      } else {
+        isLarge = false;
+      }
+
       final items = <ItemBoton>[
         ItemBoton( FontAwesomeIcons.carBurst, 'Motor Accident', Color(0xff6989F5), Color(0xff906EF5) ),
         ItemBoton( FontAwesomeIcons.plus, 'Medical Emergency', Color(0xff66A9F2), Color(0xff536CF6) ),
@@ -56,20 +66,24 @@ class EmergencyPage extends StatelessWidget {
         body: Stack(
           children: [
             Container(
-              margin: EdgeInsets.only(top:200),
-              child: ListView(
-                // Para que al llegar al final de la lista, el comportamiento sea como el de Ios,
-                // es decir, que haga un rebote.
-                // En Android queda más feo y por eso lo corregimos.
-                physics: BouncingScrollPhysics(),
-                children: [
-                  SizedBox(height: 80),
-                  ...itemMap,
-                ]
+              margin: EdgeInsets.only(top: isLarge ? 220 : 10),
+              child: SafeArea(
+                child: ListView(
+                  // Para que al llegar al final de la lista, el comportamiento sea como el de Ios,
+                  // es decir, que haga un rebote.
+                  // En Android queda más feo y por eso lo corregimos.
+                  physics: BouncingScrollPhysics(),
+                  children: [
+                    if (isLarge)
+                      SizedBox(height: 80),
+                    ...itemMap,
+                  ]
+                ),
               ),
             ),
 
-            _Encabezado()
+            if (isLarge)
+              _Encabezado()
           ],
         )
       );

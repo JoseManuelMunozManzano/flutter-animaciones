@@ -1,0 +1,9 @@
+version: "Apple Swift version 6.1 (swiftlang-6.1.0.110.21 clang-1700.0.13.3)"
+options: "167e4b1f7d4c8505d8540e9cdc37e0af2a64fe655afa7a911af7ab50b4a6c3fe"
+build_start_time: [1744828760, 556719000]
+build_end_time: [1744828764, 118176000]
+inputs:
+  ? "/Users/jmmm/Programacion/Programacion/FrontEnd/Flutter/Dvt_Flutter_Intermedio_Disenos/00_Proyectos/design_app/ios/DerivedData2/Runner/Index.noindex/Build/Intermediates.noindex/Runner.build/Debug-iphonesimulator/Runner.build/DerivedSources/GeneratedAssetSymbols.swift"
+  : [1744828760, 466946041]
+  ? "/Users/jmmm/Programacion/Programacion/FrontEnd/Flutter/Dvt_Flutter_Intermedio_Disenos/00_Proyectos/design_app/ios/Runner/AppDelegate.swift"
+  : [1740209442, 232656893]

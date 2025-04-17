@@ -1,0 +1,51 @@
+{
+  "buildCommand" : {
+    "command" : "prepareForIndexing",
+    "enableIndexBuildArena" : true,
+    "targets" : null
+  },
+  "configuredTargets" : [
+    {
+      "guid" : "18c1723432283e0cc55f10a6dcfd9e02b835f5f63276aec8d000a1f39e912778"
+    },
+    {
+      "guid" : "18c1723432283e0cc55f10a6dcfd9e0288a783a885d8b0b3beb2e9f90bde3f49"
+    }
+  ],
+  "containerPath" : "/Users/jmmm/Programacion/Programacion/FrontEnd/Flutter/Dvt_Flutter_Intermedio_Disenos/00_Proyectos/design_app/ios/Runner.xcworkspace",
+  "continueBuildingAfterErrors" : true,
+  "dependencyScope" : "workspace",
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "indexbuild",
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/jmmm/Programacion/Programacion/FrontEnd/Flutter/Dvt_Flutter_Intermedio_Disenos/00_Proyectos/design_app/ios/DerivedData2/Runner/Index.noindex/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/jmmm/Programacion/Programacion/FrontEnd/Flutter/Dvt_Flutter_Intermedio_Disenos/00_Proyectos/design_app/ios/DerivedData2/Runner/Index.noindex/Build/Products",
+      "derivedDataPath" : "/Users/jmmm/Programacion/Programacion/FrontEnd/Flutter/Dvt_Flutter_Intermedio_Disenos/00_Proyectos/design_app/ios/DerivedData2",
+      "indexDataStoreFolderPath" : "/Users/jmmm/Programacion/Programacion/FrontEnd/Flutter/Dvt_Flutter_Intermedio_Disenos/00_Proyectos/design_app/ios/DerivedData2/Runner/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/jmmm/Programacion/Programacion/FrontEnd/Flutter/Dvt_Flutter_Intermedio_Disenos/00_Proyectos/design_app/ios/DerivedData2/Runner/Index.noindex/PrecompiledHeaders",
+      "indexRegularBuildIntermediatesPath" : "/Users/jmmm/Programacion/Programacion/FrontEnd/Flutter/Dvt_Flutter_Intermedio_Disenos/00_Proyectos/design_app/ios/DerivedData2/Runner/Build/Intermediates.noindex",
+      "indexRegularBuildProductsPath" : "/Users/jmmm/Programacion/Programacion/FrontEnd/Flutter/Dvt_Flutter_Intermedio_Disenos/00_Proyectos/design_app/ios/DerivedData2/Runner/Build/Products",
+      "pchPath" : "/Users/jmmm/Programacion/Programacion/FrontEnd/Flutter/Dvt_Flutter_Intermedio_Disenos/00_Proyectos/design_app/ios/DerivedData2/Runner/Index.noindex/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO",
+          "ENABLE_XOJIT_PREVIEWS" : "NO",
+          "ONLY_ACTIVE_ARCH" : "YES"
+        }
+      }
+    }
+  },
+  "qos" : "utility",
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

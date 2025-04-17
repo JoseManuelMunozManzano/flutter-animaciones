@@ -1,0 +1,74 @@
+{
+  "buildCommand" : {
+    "command" : "build",
+    "skipDependencies" : false,
+    "style" : "buildOnly"
+  },
+  "configuredTargets" : [
+    {
+      "guid" : "18c1723432283e0cc55f10a6dcfd9e0288a783a885d8b0b3beb2e9f90bde3f49"
+    }
+  ],
+  "containerPath" : "/Users/jmmm/Programacion/Programacion/FrontEnd/Flutter/Dvt_Flutter_Intermedio_Disenos/00_Proyectos/design_app/ios/Runner.xcworkspace",
+  "continueBuildingAfterErrors" : false,
+  "dependencyScope" : "workspace",
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "arm64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "iphonesimulator",
+      "sdk" : "iphonesimulator18.4",
+      "sdkVariant" : "iphonesimulator",
+      "supportedArchitectures" : [
+        "arm64",
+        "x86_64"
+      ],
+      "targetArchitecture" : "arm64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/jmmm/Programacion/Programacion/FrontEnd/Flutter/Dvt_Flutter_Intermedio_Disenos/00_Proyectos/design_app/ios/DerivedData2/Runner/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/jmmm/Programacion/Programacion/FrontEnd/Flutter/Dvt_Flutter_Intermedio_Disenos/00_Proyectos/design_app/ios/DerivedData2/Runner/Build/Products",
+      "derivedDataPath" : "/Users/jmmm/Programacion/Programacion/FrontEnd/Flutter/Dvt_Flutter_Intermedio_Disenos/00_Proyectos/design_app/ios/DerivedData2",
+      "indexDataStoreFolderPath" : "/Users/jmmm/Programacion/Programacion/FrontEnd/Flutter/Dvt_Flutter_Intermedio_Disenos/00_Proyectos/design_app/ios/DerivedData2/Runner/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/jmmm/Programacion/Programacion/FrontEnd/Flutter/Dvt_Flutter_Intermedio_Disenos/00_Proyectos/design_app/ios/DerivedData2/Runner/Index.noindex/PrecompiledHeaders",
+      "pchPath" : "/Users/jmmm/Programacion/Programacion/FrontEnd/Flutter/Dvt_Flutter_Intermedio_Disenos/00_Proyectos/design_app/ios/DerivedData2/Runner/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "commandLine" : {
+        "table" : {
+          "BUILD_DIR" : "/Users/jmmm/Programacion/Programacion/FrontEnd/Flutter/Dvt_Flutter_Intermedio_Disenos/00_Proyectos/design_app/build/ios",
+          "COMPILER_INDEX_STORE_ENABLE" : "NO",
+          "FLUTTER_SUPPRESS_ANALYTICS" : "true",
+          "SCRIPT_OUTPUT_STREAM_FILE" : "/var/folders/pw/r4q0c4753tqdz1bylz35zchh0000gn/T/flutter_tools.KctiEp/flutter_ios_build_temp_dirfrDI9d/pipe_to_stdout",
+          "SDKROOT" : "iphonesimulator18.4"
+        }
+      },
+      "synthesized" : {
+        "table" : {
+          "ACTION" : "build",
+          "ASSETCATALOG_FILTER_FOR_DEVICE_MODEL" : "iPad16,4-A",
+          "ASSETCATALOG_FILTER_FOR_DEVICE_OS_VERSION" : "18.4",
+          "ASSETCATALOG_FILTER_FOR_THINNING_DEVICE_CONFIGURATION" : "iPad16,4-A",
+          "BUILD_ACTIVE_RESOURCES_ONLY" : "YES",
+          "ENABLE_PREVIEWS" : "NO",
+          "ENABLE_XOJIT_PREVIEWS" : "YES",
+          "TARGET_DEVICE_IDENTIFIER" : "39102D1D-6A23-402C-A770-E657791E45D5",
+          "TARGET_DEVICE_MODEL" : "iPad16,4",
+          "TARGET_DEVICE_OS_VERSION" : "18.4",
+          "TARGET_DEVICE_PLATFORM_NAME" : "iphonesimulator"
+        }
+      }
+    }
+  },
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

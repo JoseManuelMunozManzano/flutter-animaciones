@@ -33,30 +33,39 @@ class _PinterestMenuLocation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final widthPantalla = MediaQuery.of(context).size.width;
+    double widthPantalla = MediaQuery.of(context).size.width;
     final mostrar = Provider.of<_MenuModel>(context).mostrar;
     final appTheme = Provider.of<ThemeChanger>(context).currentTheme;
+
+    // Para centrar el menú.
+    // Resto 300 px porque es lo que ocupa el menú de la izquierda en tabletas.
+    print(MediaQuery.of(context).size.width);
+    if (widthPantalla > 500) {
+      widthPantalla = widthPantalla - 300;
+    }
 
     return Positioned(
       bottom: 30,
       child: SizedBox(
         width: widthPantalla,
-        // Por defecto Align ya centra, pero si queremos alinear
-        // en otro sitio, usaremos la propiedad alignment.
-        child: Align(
-          child: PinterestMenu(
-            mostrar: mostrar,
-            backgroundColor: appTheme.scaffoldBackgroundColor,
-            activeColor: appTheme.colorScheme.primary,
-            // inactiveColor: Colors.red,
-            items: [
-                PinterestButton(onPressed: (){print('Icon pie_chart');}, icon: Icons.pie_chart),
-                PinterestButton(onPressed: (){print('Icon search');}, icon: Icons.search),
-                PinterestButton(onPressed: (){print('Icon notifications');}, icon: Icons.notifications),
-                PinterestButton(onPressed: (){print('Icon supervised_user_circle');}, icon: Icons.supervised_user_circle),
-              ],
-          ),
-        ),
+        child: Row(
+          children: [
+            Spacer(),
+            PinterestMenu(
+              mostrar: mostrar,
+              backgroundColor: appTheme.scaffoldBackgroundColor,
+              activeColor: appTheme.colorScheme.primary,
+              // inactiveColor: Colors.red,
+              items: [
+                  PinterestButton(onPressed: (){print('Icon pie_chart');}, icon: Icons.pie_chart),
+                  PinterestButton(onPressed: (){print('Icon search');}, icon: Icons.search),
+                  PinterestButton(onPressed: (){print('Icon notifications');}, icon: Icons.notifications),
+                  PinterestButton(onPressed: (){print('Icon supervised_user_circle');}, icon: Icons.supervised_user_circle),
+                ],
+            ),
+            Spacer(),
+          ],
+        )
       )
     );
   }
@@ -103,13 +112,23 @@ class _PinterestGridState extends State<PinterestGrid> {
 
   @override
   Widget build(BuildContext context) {
+
+    // Indicar si son distintos dispositivos, se puede hacer un switch teniendo
+    // en cuento distintos pixeles para mostrar más o menos columnas.
+    int count;
+    if (MediaQuery.of(context).size.width > 500) {
+      count = 3;  // 3 columnas
+    } else {
+      count = 2; // 2 columnas
+    }
+
     return StaggeredGridView.countBuilder(
       // Indicamos el ScrollController.
       controller: controller,
-      crossAxisCount: 4,
+      crossAxisCount: count,
       itemCount: items.length,
       itemBuilder: (context, index) => _PinterestItem(index),
-      staggeredTileBuilder: (int index) => StaggeredTile.count(2, index.isEven ? 2 : 3),
+      staggeredTileBuilder: (int index) => StaggeredTile.count(1, index.isEven ? 1 : 2),
       mainAxisSpacing: 4.0,
       crossAxisSpacing: 4.0,
     );

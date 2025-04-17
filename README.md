@@ -707,3 +707,91 @@ Modficamos `sliver_list_page.dart`.
 ### Creando un diseño personalizado
 
 Si cambiamos `currentTheme` en `theme.dart` cambio el tema global en mi app.
+
+También modifico `launcher_page.dart`.
+
+## Diseño landscape, portrait y tablets
+
+### Temas puntuales de la sección
+
+En esta sección tocaremos los siguientes temas:
+
+- Diseño en tabletas
+- Optimizaciones para celulares
+- Landscape y portrait
+- Orientation detection
+- MediaQuery
+- Alinear proporcionalmente
+- Retoques en cada página creada hasta el momento para asegurarnos que funcione bien
+- Diseño de dos columnas
+- Y más
+
+### Orientation Builder
+
+Si giramos el dispositivo y lo dejamos en horizontal, todo sigue funcionando, pero se ve feo.
+
+Igualmente, si abrimos nuestra app en una tableta, debería de adaptarse para aprovechar todo el espacio, pero tampoco lo hace.
+
+A día de hoy, no hay tantísima diferencia entre un móvil y una tableta, y no se usa tanto Orientation Builder.
+
+Es un poco inútil porque no debería ser la base del diseño saber si estoy en portrait o landscape.
+
+Lo importante es el tamaño del dispositivo.
+
+Modificamos `main.dart` para añadir `OrientationBuilder()`.
+
+Abrimos un emulador de Ipad de 11 pulgadas y, para ejecutar en los dos dispositivos, ejecutar en la terminal lo siguiente: `flutter run -d <id_dispositivo>`. Entonces, el emulador de Iphone se ejecuta en VSCode y el del IPad en la terminal.
+
+Para el IPad sería `flutter run -d 39102D1D-6A23-402C-A770-E657791E45D5`
+
+Para hacer un hot reload, pulsar `r` en el terminal.
+
+Veremos que en portrait, en el IPad, se nota que la app no está hecha para ese dispositivo.
+
+### Layout tableta y teléfono
+
+Hacemos una copia de `launcher_page.dart`. A la copia le pongo el nombre `launcher_tablet_page.dart` y trabajo con ella.
+
+Vamos a trabajar en base a resoluciones de pantalla.
+
+Es decir, en la tablet voy a trabajar con `launcher_tablet_page.dart`, pero si giro el móvil, también voy a trabajar con `launcher_tablet_page.dart`. Me refiero a dispositivos anchos.
+
+Modifico `main.dart` para tomar la decisión de qué archivo de los dos mostrar, `launcher_page.dart` o `launcher_tablet_page.dart`.
+
+Pero recordar que no lo vamos a hacer en función de la orientación, sino de las resoluciones o píxeles.
+
+### Diseño de dos columnas - Tablet
+
+En tabletas suelen hacerse diseños basados en dos columnas, en la parte izquierda el menú principal u opciones, y en la parte derecha la opción seleccionada.
+
+Modificamos `launcher_tablet_page.dart` para que el diseño quede optimizado para tabletas.
+
+### Navegar en diseño de dos columnas
+
+Tenemos como problema que, si en la tableta hacemos click en cualquier opción, navega completamente a dicha opción, perdiendo el diseño de dos columnas.
+
+Para solucionar este problema, vamos a trabajar con un Provider especializado en la navegación de la parte derecha.
+
+En la carpeta `models` creamos el archivo `layout_model.dart`.
+
+Este provider lo colocamos en `main.dart`.
+
+Modificamos `launcher_tablet_page.dart` para que, si cambio de página, leer de nuestro provider para establecer la nueva página.
+
+### SlideshowPage - Cambiando columnas por rows
+
+Cuando giramos el móvil, la página `slideshow_page.dart` se ve mal. En la tableta, al girarla si se ve bien.
+
+Sin embargo, el cálculo se aplicará para ambas porque puede haber tabletas muy delgadas.
+
+De nuevo, no es importante hablar de tabletas o móviles, sino del tamaño en pixeles.
+
+Modificamos `slideshow_pagedart`.
+
+### EmergencyPage
+
+Modificamos `emergency_page.dart` para que, cuando giramos los dispositivos se vea correctamente.
+
+### PinterestPage
+
+Modificamos `pinterest_page.dart` para que, cuando giramos los dispositivos se vea correctamente.

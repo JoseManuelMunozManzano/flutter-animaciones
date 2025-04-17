@@ -11,14 +11,26 @@ class SlideshowPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    // Para controlar como se ven los slides en función del tamaño en pixeles del dispositivo.
+    bool isLarge;
+    if (MediaQuery.of(context).size.height > 500) {
+      isLarge = true;
+    } else {
+      isLarge = false;
+    }
+
+    final children = [
+      Expanded(child: MiSlideshow()),
+      Expanded(child: MiSlideshow()),
+    ];
+
     return Scaffold(
       // backgroundColor: Colors.purple,
-      body: Column(
-        children: [
-          Expanded(child: MiSlideshow()),
-          Expanded(child: MiSlideshow()),
-        ],
-      )
+      // Si es suficientemente ancho (la altura) la muestro en columnas, sino en fila.
+      body: isLarge 
+        ? Column(children: children)
+        : Row(children: children,)
     );
   }
 }
